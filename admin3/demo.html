@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Materialize</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="vendor/materialize-css/dist/css/materialize.min.css"
+        media="screen,projection" />
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="javascript:void(0)">
+            <div class="row">
+                <div class="col s12 m6">
+                    <input type="text" class="datepicker" id="startdate">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6">
+                    <input type="text" class="datepicker" id="enddate">
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+
+
+
+
+    <!-- JQuery -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="vendor/materialize-css/dist/js/materialize.min.js"></script>
+
+    <script>
+        var date = {
+            "minDate": new Date(),
+            "maxDate": new Date()
+        }
+
+        $('#startdate').val(formatDate(date.minDate));
+        $('#enddate').val(formatDate(date.minDate));
+
+        $('#startdate').datepicker({
+            autoClose: true,
+            format: 'dd-mm-yyyy',
+            defaultDate: new Date(),
+            maxDate: new Date(),
+            onSelect: function (time) {
+                date.minDate = time
+            }
+        });
+
+        $('#enddate').datepicker({
+            autoClose: true,
+            format: 'dd-mm-yyyy',
+            defaultDate: new Date(),
+            maxDate: new Date(),
+            onSelect: function (time) {
+                date.maxDate = time
+            }
+        });
+
+
+        $("input[type='submit']").click(function (e) {
+            console.log(formatDate(date.minDate) + ' ::: ' + formatDate(date.maxDate));
+        });
+
+        function formatDate(date) {
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            if (day < 10) {
+                day = '0' + day;
+            }
+            if (month < 10) {
+                month = '0' + month;
+            }
+            return day + '-' + month + '-' + year;
+        }
+    </script>
+</body>
+
+</html>

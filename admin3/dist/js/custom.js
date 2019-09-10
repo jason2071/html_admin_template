@@ -31,5 +31,4 @@ $(function() {
     };
     $(window).ready(setsidebartype);
     $(window).on("resize", setsidebartype);
-
 });
