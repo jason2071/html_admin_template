@@ -11,8 +11,12 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Xtreme Admin Template - The Ultimate Multipurpose admin template</title>
+    <!-- Bootstrap-datepicker -->
+    <link href="assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="dist/css/bootstrap-datepicker3.min.css">
     <!-- Custom CSS -->
-    <link href="dist/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.min.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -115,11 +119,24 @@
                             </div>
                             <!-- End User Profile-->
                         </li>
-
-                        <!-- User Profile-->
+                        <!-- Search All -->
+                        <li class="p-15 m-t-10"><a href="javascript:void(0)"
+                                class="btn btn-block create-btn text-white no-block d-flex align-items-center"><i
+                                    class="fa fa-search"></i> <span class="hide-menu m-l-5">Jobs</span> </a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
+                                href="index.html" aria-expanded="false"><i class="mdi mdi-file"></i><span
+                                    class="hide-menu">All Jobs</span></a></li>
+                        <!-- Search Merchant Detail menu -->
+                        <li class="p-15 m-t-10"><a href="javascript:void(0)"
+                                class="btn btn-block create-btn text-white no-block d-flex align-items-center"><i
+                                    class="fa fa-search"></i> <span class="hide-menu m-l-5">Merchant</span> </a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="merchant.html" aria-expanded="false"><i class="mdi mdi-file"></i><span
+                                    class="hide-menu">Merchant Detail</span></a></li>
+                        <!-- Search Job order menu -->
+                        <li class="p-15 m-t-10"><a href="javascript:void(0)"
+                                class="btn btn-block create-btn text-white no-block d-flex align-items-center"><i
+                                    class="fa fa-search"></i> <span class="hide-menu m-l-5">Job Order</span> </a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="job.html" aria-expanded="false"><i class="mdi mdi-account-network"></i><span
                                     class="hide-menu">Job Number</span></a></li>
@@ -132,10 +149,10 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="merchant.html" aria-expanded="false"><i class="mdi mdi-file"></i><span
                                     class="hide-menu">MerchantID</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="merchant-name.html" aria-expanded="false"><i
                                     class="mdi mdi-alert-outline"></i><span class="hide-menu">Merchant Name</span></a>
-                        </li>
+                        </li> -->
 
                     </ul>
 
@@ -153,11 +170,85 @@
             <div class="container-fluid">
                 <!-- Start Page Content -->
                 <div class="row">
-                    <div class="col-12">
-                        <div class="card">
+                    <div class="col-md-12">
+                        <div class="card border border-cyan">
                             <div class="card-body">
-                                <h4 class="card-title">Dashboard</h4>
-                                <input type="text" class="datepicker">
+                                <form class="form-horizontal form-material">
+                                    <div class="form-group">
+                                        <label class="col-md-12">Job Number</label>
+                                        <div class="col-md-12">
+                                            <input type="number" placeholder="Job No."
+                                                class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Serial Number</label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="S/N" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Terminal Id</label>
+                                        <div class="col-md-12">
+                                            <input type="number" placeholder="Ter. Id"
+                                                class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Date</label>
+                                        <div class="col-md-12 input-daterange input-group" id="datepicker">
+                                            <input type="text" class="form-control" name="start">
+                                            &nbsp;&nbsp;<span class="input-group-addon">to</span>&nbsp;&nbsp;
+                                            <input type="text" class="form-control" name="end">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card border border-success">
+                            <div class="card-body">
+                                <form class="form-horizontal form-material">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="col-md-4 col-sm-12">
+                                                <label class="col-md-12">Job Number</label>
+                                                <input type="number" placeholder="Job No."
+                                                    class="form-control form-control-line">
+                                            </div>
+                                            <div class="col-md-4 col-sm-12">
+                                                <label class="col-md-12">Serial Number</label>
+                                                <input type="text" placeholder="S/N"
+                                                    class="form-control form-control-line">
+                                            </div>
+                                            <div class="col-md-4 col-sm-12">
+                                                <label class="col-md-12">Terminal Id</label>
+                                                <input type="number" placeholder="Ter. Id"
+                                                    class="form-control form-control-line">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-6 col-sm-12">Date</label>
+                                        <div class="col-md-6 col-sm-12 input-daterange input-group" id="datepicker">
+                                            <input type="text" class="form-control" name="start">
+                                            &nbsp;&nbsp;<span class="input-group-addon">to</span>&nbsp;&nbsp;
+                                            <input type="text" class="form-control" name="end">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -187,12 +278,41 @@
     <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="dist/js/app-style-switcher.js"></script>
+    <script src="dist/js/bootstrap-datepicker.min.js"></script>
     <!--Wave Effects -->
     <script src="dist/js/waves.js"></script>
     <!--Menu sidebar -->
     <script src="dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="dist/js/custom.js"></script>
+    <script type="text/javascript">
+        $('.input-daterange').datepicker({
+            format: "dd-mm-yyyy",
+            todayBtn: "linked",
+            daysOfWeekHighlighted: "0,6",
+            autoclose: true,
+            todayHighlight: true,
+            endDate: formatDate(new Date())
+        });
+
+        $(document).ready(function () {
+            $("input[name='start']").val(formatDate(new Date()));
+            $("input[name='end']").val(formatDate(new Date()));
+        });
+
+        function formatDate(date) {
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            if (day < 10) {
+                day = '0' + day;
+            }
+            if (month < 10) {
+                month = '0' + month;
+            }
+            return day + '-' + month + '-' + year;
+        }
+    </script>
 </body>
 
 </html>
