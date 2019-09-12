@@ -8,13 +8,13 @@
     <title>ADMIN</title>
 
     <!-- CSS -->
-    <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="vendor/materialize-css/dist/css/materialize.min.css"
-        media="screen,projection" />
-    <!-- Import Custom CSS -->
+    <link rel="stylesheet" href="vendor/materialize-css/dist/css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="vendor/datatables/media/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="dist/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="dist/css/custom.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/809e7baabe.js"></script>
 </head>
 
 <body>
@@ -25,15 +25,15 @@
                 <div class="container">
                     <div class="row">
                         <div class="col s12 m10 offset-m1">
-                            <a href="index.html" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+                            <a href="index.html" class="brand-logo">Job Order</a>
                             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
                                     class="material-icons">menu</i></a>
                             <ul class="right hide-on-med-and-down">
-                                <li><a href="#"><i class="material-icons">search</i></a></li>
-                                <li><a href="#"><i class="material-icons">view_module</i></a></li>
-                                <li><a href="#"><i class="material-icons">refresh</i></a></li>
-                                <li><a href="#"><i class="material-icons left">block</i> Block</a></li>
-                                <li><a href="#"><i class="material-icons">more_vert</i></a></li>
+                                <li><a href="customer.html">Customer</a></li>
+                                <li><a href="#" class='dropdown-trigger' data-target="dropdown-job-order">Job Order<i
+                                            class="material-icons right">arrow_drop_down</i></a></li>
+                                <li><a href="report.html">Report</a></li>
+                                <li><a href="login.html">Logout</a></li>
                             </ul>
                         </div>
                     </div>
@@ -41,8 +41,17 @@
             </div>
         </nav>
 
+        <!-- Dropdown Job Order -->
+        <ul id='dropdown-job-order' class='dropdown-content'>
+            <li><a href="job-number.html">Job Number</a></li>
+            <li><a href="serial-number.html">Serila Number</a></li>
+            <li><a href="terminal-id.html">Terminal Id</a></li>
+            <li><a href="merchant-id.html">Merchabt Id</a></li>
+            <li><a href="merchant_name.html">Merchant Name</a></li>
+        </ul>
+
         <!-- Sidebar -->
-        <ul id="mobile-demo" class="sidenav sidenav-fixed">
+        <ul id="mobile-demo" class="sidenav">
             <li>
                 <div class="user-view">
                     <div class="background">
@@ -53,158 +62,65 @@
                     <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                 </div>
             </li>
-            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-            <li><a href="#!">Second Link</a></li>
-            <li>
-                <div class="divider"></div>
-            </li>
-            <li><a class="subheader">Subheader</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-            <li>
-                <div class="divider"></div>
-            </li>
-            <li><a href="#"><i class="material-icons">block</i>Logout</a></a></li>
+            <li><a href="customer.html" class="collapsible-header waves-effect waves-teal">Customer</a></li>
             <li>
                 <div class="divider"></div>
             </li>
             <li class="no-padding">
                 <ul class="collapsible">
-                    <li class="bold"><a class="collapsible-header waves-effect waves-teal">Table</a>
+                    <li class="bold"><a class="collapsible-header waves-effect waves-teal">Job Order<i
+                                class="material-icons right">arrow_drop_down</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="normal-table.html">Normal</a></li>
-                                <li><a href="data-table.html">DataTable</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="bold"><a class="collapsible-header waves-effect waves-teal">Javascript</a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="#!">Color</a></li>
-                                <li><a href="#!">Grid</a></li>
+                                <li><a href="job-number.html">Job Number</a></li>
+                                <li><a href="serial-number.html">Serila Number</a></li>
+                                <li><a href="terminal-id.html">Terminal Id</a></li>
+                                <li><a href="merchant-id.html">Merchabt Id</a></li>
+                                <li><a href="merchant_name.html">Merchant Name</a></li>
                             </ul>
                         </div>
                     </li>
                 </ul>
             </li>
-
-            <li class="no-padding">
-                <ul class="collapsible">
-                    <li class="bold">
-                        <div class="collapsible-header waves-effect waves-teal"><i
-                                class="material-icons">filter_drama</i>First</div>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="#!">Color</a></li>
-                                <li><a href="#!">Grid</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="#!">Color</a></li>
-                                <li><a href="#!">Grid</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="#!">Color</a></li>
-                                <li><a href="#!">Grid</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+            <li>
+                <div class="divider"></div>
             </li>
+            <li><a href="report.html" class="collapsible-header waves-effect waves-teal">Report</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a href="login.html" class="collapsible-header waves-effect waves-red">Logout</a></li>
         </ul>
 
     </header>
 
-
     <main>
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m7 offset-m1 xl7 offset-xl1">
-                    <h2 class="header">Horizontal Card</h2>
-                    <div class="card horizontal">
-                        <div class="card-image">
-                            <img src="https://lorempixel.com/100/190/nature/6">
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information.</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="#">This is a link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col s12 m4 offset-m1 offset-xl1">
-                    <div class="card small">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="images/office.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Card Title<i
-                                    class="material-icons right">more_vert</i></span>
-                            <p><a href="#">This is a link</a></p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Card Title<i
-                                    class="material-icons right">close</i></span>
-                            <p>Here is some more information about this product that is only revealed once clicked on.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m4 offset-m1 offset-xl1">
-                    <div class="card small">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="images/office.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Card Title<i
-                                    class="material-icons right">more_vert</i></span>
-                            <p><a href="#">This is a link</a></p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Card Title<i
-                                    class="material-icons right">close</i></span>
-                            <p>Here is some more information about this product that is only revealed once clicked on.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-copyright">
+        <section class="section-serach">
             <div class="container">
-                © 2014 Copyright Text
+                <div class="row">
+                    <div class="col s12">
+                        <h4 class="header teal-text lighten-5">Search Customer</h4>
+                        <div class="input-field">
+                            <input id="merchant_id" type="number" class="validate">
+                            <label for="merchant_id">Merchant Id</label>
+                            <span class="helper-text" data-error="Please enter numbers." data-success="right"></span>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <button class="btn">Search</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
+    </main>
 
     <!-- JAVASCRIPT -->
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="vendor/materialize-css/dist/js/materialize.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.sidenav').sidenav();
-            $('.collapsible').collapsible();
-        });
-    </script>
+    <script type="text/javascript" src="vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="dist/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="dist/js/custom.js"></script>
 </body>
 
 </html>
